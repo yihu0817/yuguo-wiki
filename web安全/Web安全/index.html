@@ -1,0 +1,518 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>Web安全及防御 - 雨果学院wiki课程</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="雨果学院wiki课程" class="md-header-nav__button md-logo" aria-label="雨果学院wiki课程">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            雨果学院wiki课程
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Web安全及防御
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="雨果学院wiki课程" class="md-nav__button md-logo" aria-label="雨果学院wiki课程">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    雨果学院wiki课程
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="课程目录" class="md-nav__link">
+      课程目录
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Vue课程
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Vue课程" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Vue课程
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue%E8%AF%BE%E7%A8%8B/vue%E5%AE%89%E8%A3%85/" title="Vue安装" class="md-nav__link">
+      Vue安装
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue%E8%AF%BE%E7%A8%8B/vue%E7%AE%80%E4%BB%8B/" title="Vue 简介" class="md-nav__link">
+      Vue 简介
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Web安全
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Web安全" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Web安全
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Web安全及防御" class="md-nav__link md-nav__link--active">
+      Web安全及防御
+    </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="web">Web安全及防御</h1>
+<h1 id="_1">前言</h1>
+<p>其实, 前端的安全并没有很多, 不过知道了, 起码后端兄弟不会那么累了。
+本文主要讨论以下几种攻击方式 :</p>
+<ul>
+<li><strong>XSS方式</strong></li>
+<li><strong>CSRF方式</strong></li>
+<li><strong>点击劫持</strong></li>
+</ul>
+<p>希望大家在阅读完文本之后, 能够很好地回答以下的几个问题:</p>
+<ul>
+<li><strong>前端的攻击方式有哪些?</strong></li>
+<li><strong>什么是XSS方式? XSS攻击有几种类型?如何防范XSS攻击?</strong></li>
+<li><strong>什么是CSRF攻击?如何防范CSRF攻击?</strong></li>
+<li><strong>如何检测网站是否安全?</strong></li>
+</ul>
+<h2 id="1-xss">1. XSS方式</h2>
+<p>XSS(Cross-Site-Scripting),跨站脚本攻击是一种代码注入攻击。攻击者在目标网站上注入恶意代码,当被攻击者登录网站时就会执行这些恶意代码, 这些脚本可以读取 cookie ,session tokens , 或者其他敏感的网站消息,对用户进行钓鱼欺诈,甚至发起蠕虫攻击等。</p>
+<p><strong>XSS的本质:恶意代码未经过滤,与网站正常的代码混在一起;浏览器无法分辨哪些脚本是可信的,导致恶意脚本被执行。由于直接在用户的终端执行,恶意代码能够直接获取用户的信息,利用这些信息冒充用户向网站发起攻击</strong></p>
+<p>XSS的分类:</p>
+<ul>
+<li>存储型</li>
+<li>反射型</li>
+<li>DOM 型</li>
+</ul>
+<h3 id="11-xss">1.1 反射型XSS</h3>
+<p>当用户点击一个恶意链接, 或者提交一个表单, 或者进入一个恶意网站时, 注入脚本进入被攻击者的网站。Web 服务器将注入脚本,比如一个错误信息, 搜索结果等 , 未进行过滤直接返回到用户的浏览器上。</p>
+<p>反射型XSS的攻击步骤:</p>
+<ul>
+<li>1.攻击者构造出特殊的URL, 其中包含恶意代码</li>
+<li>2.用户打开带有恶意代码的URL时, 网站服务端将恶意代码从 URL中取出, 拼接在 HTML中返回给浏览器</li>
+<li>3.用户浏览器接收到响应后解析执行, 混在其中的恶意代码也被执行。</li>
+<li>4.恶意代码窃取用户数据并发送到攻击者的网站, 或者冒充用户的行为, 调用目标网站接口执行攻击者指定的操作。</li>
+</ul>
+<p>反射型 XSS 漏洞常见于 URL 传递参数的功能 , 如网站搜索 , 跳转等。由于需要用户主动打开恶意的 URL 才能生效 , 攻击者往往会结合多种手段诱导用户点击</p>
+<p>POST 的内容也可以触发反射型 XSS , 只不过其触发条件比较苛刻 (需要构造表单提交页面 , 并引导用户点击),所以非常少见。</p>
+<p><strong>话不多说 , 我们来举个例子</strong></p>
+<p><img alt="img" src="https://user-gold-cdn.xitu.io/2020/3/21/170fc3ec07a4518e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" /></p>
+<pre><code class="js">//前端代码
+// index.html
+// 由于必须诱导用户点击,所以可能是这样的
+&lt;button id=&quot;btn&quot; onclick=&quot;test()&quot;&gt;
+    //这是一张很好看的图片
+    &lt;img src=&quot;https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1136880418,2628684495&amp;fm=15&amp;gp=0.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/button&gt;
+&lt;script&gt;
+    var test = function() {
+    // 构造出的特殊的 url , 其中包含恶意代码
+    let url = `/welcome?type=&lt;script&gt;alert('恶意内容')&lt;\/script&gt;`;
+    location.href = url;
+}
+&lt;/script&gt;
+
+// 后端代码
+// server.js
+const express = require('express');
+const app = express();
+app.use(express.static(path.join(__dirname)))
+app.get('/welcome',function(req, res) {
+    // 把恶意代码当做字符串, 传输回浏览器
+    res.send(`${req.query.type}`);
+    res.end();
+})
+
+app.listen(3000, ()=&gt; {
+    console.log('server is running at port 4000')
+});
+</code></pre>
+
+<p><strong>如果不希望被前端拿到 cookie, 后端可以设置 httpOnly (不过这个不是 XSS 的解决方案 , 只能降低受损范围)</strong></p>
+<h4 id="xss">如何防范反射型 XSS攻击?</h4>
+<p><strong>对字符串进行编码</strong>
+对url的查询参数进行转义后再输出到页面</p>
+<pre><code class="js">app.get('/welcome',function(req,res) {
+    //对查询参数进行编码，避免反射型 XSS攻击
+    res.send(`${encodeURIComponent(req.query.type)}`); 
+})
+</code></pre>
+
+<p><strong>总结:简单来说,前端向后端发送GET请求数据,后端返回结果之前,必须先对url查询参数进行编码再输出到页面</strong></p>
+<h3 id="12-domxss">1.2 DOM型XSS</h3>
+<p>DOM型 XSS 攻击 , 实际上就是前端 javaScript 代码不够严谨 , 把不可信的内容插入到了页面 。在使用 .innerHTML , .outerHTML , appendChild , document.write()等 API 时要特别小心 , <strong>不要把不可信的数据作为为 HTML 插入到页面上</strong> , 尽量使用 .innerText , .textContent , setAttribute()等。</p>
+<h4 id="domxss">DOM型XSS 的攻击步骤:</h4>
+<ul>
+<li>1.攻击者构造出特殊数据 , 其中包含恶意代码</li>
+<li>2.用户浏览器执行恶意代码</li>
+<li>恶意代码窃取用户数据并发送到攻击者的网站 , 或者冒充用户的行为 , 调用目标网站接口执行攻击者指定的操作。</li>
+</ul>
+<h4 id="domxss_1">如何防范 DOM型XSS攻击</h4>
+<p>防范 DOM 型 XSS攻击的核心就是对输入内容进行转义 (DOM 中的内联事件监听器和链接跳转都能把字符串作为代码运行, 需要对其内容进行检查)</p>
+<ol>
+<li>
+<p>对于 url 链接(例如图片的src属性), 那么直接使用 encodeURIComponent来转义</p>
+</li>
+<li>
+<p>非 url , 我们可以这样进行编码</p>
+</li>
+</ol>
+<p><code>js
+    function encodeHtml(str) {
+        return str.replace(/"/g, '&amp;quot;')
+                .replace(/'/g, '&amp;apos;')
+                .replace(/&lt;/g, '&amp;lt;')
+                .replace(/&gt;/g, '&amp;gt;');
+    }</code></p>
+<p>DOM型 XSS攻击中 , 取出和执行恶意代码由浏览器端完成 , 属于前端 javaScript 自身的安全漏洞</p>
+<p><strong>再举个例子</strong></p>
+<pre><code class="js">//前端
+&lt;form onsubmit=&quot;return false&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;comments&quot;&gt;商品评论&lt;/label&gt;
+        &lt;input class=&quot;form-control&quot; type=&quot;text&quot; id=&quot;comments&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;input class=&quot;btn btn-danger&quot; type=&quot;button&quot; id=&quot;attck&quot; value=&quot;会被攻击&quot; /&gt;
+        &lt;input class=&quot;btn btn-primary&quot; type=&quot;button&quot; id=&quot;security&quot; value=&quot;我很安全&quot; /&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;form&gt;
+    &lt;ul class=&quot;list-group&quot;&gt;&lt;/ul&gt;
+&lt;/form&gt;
+&lt;script src=&quot;/node_modules/jquery/dist/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    // DOM型 XSS 攻击
+    $('#attck').click(function () {
+        let commend = $('#comments').val();
+        console.log(commend);
+        if ($.trim(commend)) {
+            $('.list-group').append(`&lt;li class=&quot;list-group-item&quot;&gt;${commend}&lt;/li&gt;`);
+            $('#comments').val('');
+        }
+    })
+    // HTML 编码
+    function encodeHtml(str) {
+        return str.replace(/&quot;/g, '&amp;quot;')
+            .replace(/'/g, '&amp;apos;')
+            .replace(/&lt;/g, '&amp;lt;')
+        replace(/&gt;/g, '&amp;gt;')
+    }
+
+    $('#security').click(function () {
+        let commend = $('#comments').val();
+        console.log(commend)
+        // 对内容进行转义
+        // 如果是url 地址 , 可以直接使用 encodeURIComponent 进行转义
+        if ($.trim(commend)) {
+            $('.list-group').append(`&lt;li class=&quot;list-group-item&quot;&gt;${encodeHtml(commend)}&lt;/li&gt;`);
+            $('#comments').val('');
+        }
+    })
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>总结:就是不要相信用户输入的内容,如果非要在页面上插入 HTML,就必须先转义再插入。对于URL可以使用encodeURIComponent,对于非URL可以使用上面的方法</strong></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../vue%E8%AF%BE%E7%A8%8B/vue%E7%AE%80%E4%BB%8B/" title="Vue 简介" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Vue 简介
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
